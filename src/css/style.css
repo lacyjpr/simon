@@ -4,8 +4,8 @@
 	border: 1vh black solid;
 	border-radius: 50%;
 	margin: auto;
-	width: 80vh;
-	height: 80vh;
+	width: 50vh;
+	height: 50vh;
 	background-color: black;
 }
 
@@ -43,12 +43,26 @@
 
 .innerCircle {
 	position: absolute;
-	top: 20vh;
-	left: 20vh;
+	top: 12.5vh;
+	left: 12.5vh;
 	width: 50%;
 	height: 50%;
 	border-radius: 50%;
 	background-color: black;
 	z-index: 10;
+}
+
+@media screen and (max-width: 320px){
+
+	.container {
+		width: 50vh;
+		height: 50vh;
+	}
+
+	.innerCircle {
+		top: 12.5vh;
+		left: 12.5vh;
+	}
+
 }
 
