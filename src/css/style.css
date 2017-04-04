@@ -1,3 +1,8 @@
+body, html {
+	font-family: Georgia, "Times New Roman", Serif;
+	color: white;
+}
+
 
 .container {
 	position: relative;
@@ -52,17 +57,16 @@
 	z-index: 10;
 }
 
-@media screen and (max-width: 320px){
-
-	.container {
-		width: 50vh;
-		height: 50vh;
-	}
-
-	.innerCircle {
-		top: 12.5vh;
-		left: 12.5vh;
-	}
-
+.brand {
+	text-align: center;
+	font-size: 6vh;
+	padding-top: 4vh;
 }
+
+.small {
+	font-size: 1.5vh;
+	position: relative;
+	top: -3vh;
+}
+
 
