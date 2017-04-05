@@ -80,16 +80,6 @@ body, html {
 	display: inline-block;
 }
 
-.col2 {
-	float: left;
-	padding: 0;
-	margin-left: 1vh;
-	border: 0;
-	position: relative;
-	text-align: center;
-	display: inline-block;
-}
-
 .display {
 	color: black;
 	margin: 0 0 0 3.5vh;
@@ -109,33 +99,6 @@ body, html {
 	text-align: center;
 }
 
-.label2 {
-	color: white;
-	font-family: Arial, sans;
-	font-size: 1.25vh;
-	margin-left: 1vh;
-	padding-top: .75vh;
-	text-align: center;
-}
-
-.label3 {
-	color: white;
-	font-family: Arial, sans;
-	font-size: 1.25vh;
-	margin-left: -1.3vh;
-	padding-top: .75vh;
-	text-align: center;
-}
-
-.label4 {
-	color: white;
-	font-family: Arial, sans;
-	font-size: 1.25vh;
-	margin-left: -1.5vh;
-	padding-top: .75vh;
-	text-align: center;
-}
-
 .btn-round {
 	height: 3.5vh;
 	width: 3.5vh;
@@ -146,6 +109,15 @@ body, html {
 	margin-top: 1vh;
 	margin-left: 1vh;
 	background-color: #ff0000;
+}
+
+.label2 {
+	color: white;
+	font-family: Arial, sans;
+	font-size: 1.25vh;
+	margin-left: 1vh;
+	padding-top: .75vh;
+	text-align: center;
 }
 
 .led {
@@ -160,12 +132,41 @@ body, html {
 	margin-left: 1vh;
 	margin-right: 2vh;
 	background-color: #ffff00;
+	display: block;
+}
+
+.label3 {
+	color: white;
+	font-family: Arial, sans;
+	font-size: 1.25vh;
+	margin-left: -1.3vh;
+	padding-top: .75vh;
+	text-align: center;
+}
+
+.col2 {
+	float: right;
+	padding: 0;
+	margin-right: 11vh;
+	border: 0;
+	position: relative;
+	text-align: center;
 }
 
 .reset {
 	margin-top: 1vh;
 	margin-left: -1.5vh;
 	background-color: #0000ff;
+	display: block;
+}
+
+.label4 {
+	color: white;
+	font-family: Arial, sans;
+	font-size: 1.25vh;
+	margin-left: -1.5vh;
+	padding-top: .75vh;
+	text-align: center;
 }
 
 
