@@ -3,7 +3,6 @@ body, html {
 	color: white;
 }
 
-
 .container {
 	position: relative;
 	border: 1vh black solid;
@@ -55,12 +54,14 @@ body, html {
 	border-radius: 50%;
 	background-color: black;
 	z-index: 10;
+	overflow: auto;
 }
 
 .brand {
 	text-align: center;
 	font-size: 6vh;
-	padding-top: 4vh;
+	padding: 4vh 0 0 0;
+	margin: 0;
 }
 
 .small {
@@ -68,5 +69,104 @@ body, html {
 	position: relative;
 	top: -3vh;
 }
+
+.col {
+	float: left;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	position: relative;
+	text-align: center;
+	display: inline-block;
+}
+
+.col2 {
+	float: left;
+	padding: 0;
+	margin-left: 1vh;
+	border: 0;
+	position: relative;
+	text-align: center;
+	display: inline-block;
+}
+
+.display {
+	color: black;
+	margin: 0 0 0 3.5vh;
+	font-size: 4vh;
+	width: 8vh;
+	height: 5vh;
+	background-color: grey;
+	border-radius : 10px;
+}
+
+.label1 {
+	color: white;
+	font-family: Arial, sans;
+	font-size: 1.25vh;
+	margin-left: 4vh;
+	padding-top: .75vh;
+	text-align: center;
+}
+
+.label2 {
+	color: white;
+	font-family: Arial, sans;
+	font-size: 1.25vh;
+	margin-left: 1vh;
+	padding-top: .75vh;
+	text-align: center;
+}
+
+.label3 {
+	color: white;
+	font-family: Arial, sans;
+	font-size: 1.25vh;
+	margin-left: -1.3vh;
+	padding-top: .75vh;
+	text-align: center;
+}
+
+.label4 {
+	color: white;
+	font-family: Arial, sans;
+	font-size: 1.25vh;
+	margin-left: -1.5vh;
+	padding-top: .75vh;
+	text-align: center;
+}
+
+.btn-round {
+	height: 3.5vh;
+	width: 3.5vh;
+	border-radius: 50%;
+}
+
+.start {
+	margin-top: 1vh;
+	margin-left: 1vh;
+	background-color: #ff0000;
+}
+
+.led {
+	margin-left: 2.5vh;
+	height: .5vh;
+	width: .5vh;
+	background-color: #ff0000;
+}
+
+.strict {
+	margin-top: .5vh;
+	margin-left: 1vh;
+	margin-right: 2vh;
+	background-color: #ffff00;
+}
+
+.reset {
+	margin-top: 1vh;
+	margin-left: -1.5vh;
+	background-color: #0000ff;
+}
+
 
 
