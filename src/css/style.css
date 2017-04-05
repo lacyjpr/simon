@@ -70,14 +70,13 @@ body, html {
 	top: -3vh;
 }
 
+.wrap {
+	display: flex;
+  	justify-content: center;
+}
+
 .col {
-	float: left;
-	padding: 0;
-	margin: 0;
-	border: 0;
-	position: relative;
 	text-align: center;
-	display: inline-block;
 }
 
 .display {
@@ -132,7 +131,6 @@ body, html {
 	margin-left: 1vh;
 	margin-right: 2vh;
 	background-color: #ffff00;
-	display: block;
 }
 
 .label3 {
@@ -145,26 +143,22 @@ body, html {
 }
 
 .col2 {
-	float: right;
-	padding: 0;
-	margin-right: 10.5vh;
-	border: 0;
-	position: relative;
+	display: flex;
+	flex-direction: column;
 	text-align: center;
+	padding: 0;
+	border: 0;
 }
 
 .reset {
-	margin-top: 1vh;
-	margin-left: -1.5vh;
 	background-color: #0000ff;
-	display: block;
 }
 
 .label4 {
 	color: white;
 	font-family: Arial, sans;
 	font-size: 1.25vh;
-	margin-left: -1.5vh;
+	margin-left: 0vh;
 	padding-top: .75vh;
 	text-align: center;
 }
