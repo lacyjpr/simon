@@ -81,12 +81,12 @@ body, html {
 
 .display {
 	color: black;
-	margin: 0 0 0 3.5vh;
+	margin: 0 0 0 2.5vh;
 	font-size: 4vh;
 	width: 8vh;
 	height: 5vh;
 	background-color: grey;
-	border-radius : 10px;
+	border-radius: 10px;
 }
 
 .label1 {
