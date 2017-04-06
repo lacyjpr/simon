@@ -8,8 +8,8 @@ body, html {
 	border: 1vh black solid;
 	border-radius: 50%;
 	margin: auto;
-	width: 50vh;
-	height: 50vh;
+	width: 60vh;
+	height: 60vh;
 	background-color: black;
 }
 
@@ -47,8 +47,8 @@ body, html {
 
 .innerCircle {
 	position: absolute;
-	top: 12.5vh;
-	left: 12.5vh;
+	top: 15vh;
+	left: 15vh;
 	width: 50%;
 	height: 50%;
 	border-radius: 50%;
@@ -72,7 +72,8 @@ body, html {
 
 .wrap {
 	display: flex;
-  	justify-content: center;
+	justify-content: center;
+	margin-top: 1.5vh;
 }
 
 .col {
@@ -106,7 +107,7 @@ body, html {
 
 .start {
 	margin-top: 1vh;
-	margin-left: 1vh;
+	margin-left: 1.5vh;
 	background-color: #ff0000;
 }
 
@@ -120,7 +121,7 @@ body, html {
 }
 
 .led {
-	margin-left: 2.5vh;
+	margin-left: 3vh;
 	height: .5vh;
 	width: .5vh;
 	background-color: #ff0000;
@@ -128,7 +129,7 @@ body, html {
 
 .strict {
 	margin-top: .5vh;
-	margin-left: 1vh;
+	margin-left: 1.5vh;
 	margin-right: 2vh;
 	background-color: #ffff00;
 }
@@ -161,6 +162,26 @@ body, html {
 	margin-left: 0vh;
 	padding-top: .75vh;
 	text-align: center;
+}
+
+@media (max-width: 576px) {
+	.container {
+		width: 50vh;
+		height: 50vh;
+	}
+
+	.innerCircle {
+		top: 12.5vh;
+		left: 12.5vh;
+	}
+
+	.wrap {
+		display: flex;
+		justify-content: center;
+		margin-top: 0;
+	}
+
+
 }
 
 
