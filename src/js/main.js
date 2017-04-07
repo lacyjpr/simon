@@ -1,6 +1,8 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
+	/* Model */
+
 	// Game object
 	var game = {
 		running: false,
@@ -20,19 +22,99 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// DOM elements
 	var btn = document.getElementsByClassName("btn");
-	var red = document.getElementsByClassName("top-left")[0];
-	var blue = document.getElementsByClassName("top-right")[0];
-	var green = document.getElementsByClassName("bottom-left")[0];
-	var yellow = document.getElementsByClassName("bottom-right")[0];
+	var red = document.getElementById("red");
+	var blue = document.getElementById("blue");
+	var green = document.getElementById("green");
+	var yellow = document.getElementById("yellow");
 	var display = document.getElementById("display");
 	var start = document.getElementById("start");
 	var led = document.getElementById("led");
 	var strict = document.getElementById("strict");
 	var reset = document.getElementById("reset");
 
+	// Generate computer array
+	function getComputerArray() {
+		for (var i = 0; i < 20; i++){
+			game.computerArray.push(game.colors[(Math.floor(Math.random() * 4))]);
+		}
+		console.log(game.computerArray);
+	}
+
+	/* View */
+
+	// Lights & sound
+	function lightSound(color) {
+		switch (color) {
+		case red:
+			console.log("lightSound red");
+			red.classList.add("active");
+			game.sound.red.play();
+			setTimeout(function(){
+				red.classList.remove("active");
+			}, 400);
+			break;
+		case blue: 
+			console.log("lightSound blue");
+			blue.classList.add("active");
+			game.sound.blue.play();
+			setTimeout(function(){
+				blue.classList.remove("active");
+			}, 400);
+			break;
+		case green:
+			console.log("lightSound green");
+			green.classList.add("active");
+			game.sound.green.play();
+			setTimeout(function(){
+				green.classList.remove("active");
+			}, 400);
+			break;
+		case yellow:
+			console.log("lightSound yellow");		
+			yellow.classList.add("active");
+			game.sound.yellow.play();
+			setTimeout(function(){
+				yellow.classList.remove("active");
+			}, 400);
+			break;
+		}
+	}
+
+	// Do start dance
+	function startDance() { 
+		lightSound(red);
+		setTimeout(function() {
+			lightSound(blue);
+		}, 400);
+		setTimeout(function() {
+			lightSound(yellow);
+		}, 800);
+		setTimeout(function() {
+			lightSound(green);
+		}, 1200);
+		setTimeout(function() {
+			lightSound(red);
+		}, 1600);
+		setTimeout(function() {
+			lightSound(blue);
+		}, 2000);
+		setTimeout(function() {
+			lightSound(yellow);
+		}, 2400);
+		setTimeout(function() {
+			lightSound(green);
+		}, 2800);
+		setTimeout(function() {
+			computerPlay();
+		},3200);
+		
+
+	}
 
 
-	// Start game
+/* Control */
+
+// Start game
 	start.addEventListener("click", function(){
 		startGame();
 	});
@@ -40,88 +122,25 @@ document.addEventListener("DOMContentLoaded", function() {
 	function startGame() {
 		game.running = true;
 		startDance();
+		getComputerArray();
+		//start.classList.add("unclickable");
+		
+	}
+
+	// Play computer array to count -1
+	function computerPlay() {
+		game.count++;
+		var i = 0;
+		var sequence = setInterval(function(){
+			lightSound(game.computerArray[i]);
+			console.log(game.computerArray[i]);
+			i++;
+			if (i >= game.count){
+				clearInterval(sequence);
+			}
+		}, 700);
 	}
 	
-	// Do start dance
-	function startDance() {
-		setTimeout(function(){
-			red.classList.add("active");
-			game.sound.red.play();
-		}, 400);
-		setTimeout(function(){
-			red.classList.remove("active");
-		}, 800);
-
-		setTimeout(function(){
-			blue.classList.add("active");
-			game.sound.blue.play();
-		}, 800);
-		setTimeout(function(){
-			blue.classList.remove("active");
-		}, 1200);
-
-
-		setTimeout(function(){
-			yellow.classList.add("active");
-			game.sound.yellow.play();
-		}, 1200);
-		setTimeout(function(){
-			yellow.classList.remove("active");
-		}, 1600);
-
-
-		setTimeout(function(){
-			green.classList.add("active");
-			game.sound.green.play();
-		}, 1600);
-		setTimeout(function(){
-			green.classList.remove("active");
-		}, 2000);
-
-		setTimeout(function(){
-			red.classList.add("active");
-			game.sound.red.play();
-		}, 2000);
-		setTimeout(function(){
-			red.classList.remove("active");
-		}, 2400);
-
-		setTimeout(function(){
-			blue.classList.add("active");
-			game.sound.blue.play();
-		}, 2400);
-		setTimeout(function(){
-			blue.classList.remove("active");
-		}, 2800);
-
-
-		setTimeout(function(){
-			yellow.classList.add("active");
-			game.sound.yellow.play();
-		}, 2800);
-		setTimeout(function(){
-			yellow.classList.remove("active");
-		}, 3200);
-
-
-		setTimeout(function(){
-			green.classList.add("active");
-			game.sound.green.play();
-		}, 3200);
-		setTimeout(function(){
-			green.classList.remove("active");
-		}, 3600);
-
-	}
-
-
-
-// Generate computer array
-
-
-// Iterate count
-
-// Play computer array to count -1
 	
 	// Check if player input matches computer array
 	// if (game.playerArray[game.playerArray.length -1] !== game.computerArray[game.playerArray. length -1]) 
@@ -135,8 +154,6 @@ document.addEventListener("DOMContentLoaded", function() {
 // if match
 
 // Check for win, do win dance, do start dance again
-
-// Play computer array to count -1
 
 // Reset button
 

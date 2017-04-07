@@ -39,7 +39,7 @@ body, html {
 	background-color: #BF0000; /*red*/
 }
 
-.top-left:active, .top-left.active {
+.top-left:active, .top-left-active {
 	background-color: #FF0000
 }
 
@@ -48,7 +48,7 @@ body, html {
 	background-color: #0000BF; /*blue*/
 }
 
-.top-right:active, .top-right.active {
+.top-right:active, .top-right-active {
 	background-color: #2133FF;
 }
 
@@ -57,7 +57,7 @@ body, html {
 	background-color: #006600; /*green*/
 }
 
-.bottom-left:active, .bottom-left.active {
+.bottom-left:active, .bottom-left-active {
 	background-color: #00A000;
 }
 
@@ -66,7 +66,7 @@ body, html {
 	background-color: #BFBF00; /*yellow*/
 }
 
-.bottom-right:active, .bottom-right.active {
+.bottom-right:active, .bottom-right-active {
 	background-color: #FFFF00;
 }
 
@@ -206,7 +206,6 @@ body, html {
 		justify-content: center;
 		margin-top: 0;
 	}
-
 
 }
 
