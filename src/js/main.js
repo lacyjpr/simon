@@ -1,8 +1,6 @@
 
 document.addEventListener("DOMContentLoaded", function() {
 
-	/* Model */
-
 	// Game object
 	var game = {
 		running: false,
@@ -34,16 +32,16 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Generate computer array
 	function getComputerArray() {
+		game.computerArray = [];
 		for (var i = 0; i < 20; i++){
 			game.computerArray.push(game.colors[(Math.floor(Math.random() * 4))]);
 		}
 		console.log(game.computerArray);
 	}
 
-	/* View */
-
 	// Lights & sound
 	function lightSound(color) {
+		console.log("lightSound called " + color);
 		switch (color) {
 		case red:
 			console.log("lightSound red");
@@ -107,14 +105,10 @@ document.addEventListener("DOMContentLoaded", function() {
 		setTimeout(function() {
 			computerPlay();
 		},3200);
-		
-
 	}
 
 
-/* Control */
-
-// Start game
+	// Start game
 	start.addEventListener("click", function(){
 		startGame();
 	});
@@ -132,8 +126,9 @@ document.addEventListener("DOMContentLoaded", function() {
 		game.count++;
 		var i = 0;
 		var sequence = setInterval(function(){
-			lightSound(game.computerArray[i]);
-			console.log(game.computerArray[i]);
+			var color = game.computerArray[i];
+			lightSound(color);
+			console.log(color);
 			i++;
 			if (i >= game.count){
 				clearInterval(sequence);
@@ -149,12 +144,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// If strict, restart
 
-// if not strict replay computer array
+	// if not strict replay computer array
 
-// if match
+	// if match
 
-// Check for win, do win dance, do start dance again
+	// Check for win, do win dance, do start dance again
 
-// Reset button
+	// Reset button
 
 });
