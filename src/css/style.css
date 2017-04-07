@@ -138,7 +138,7 @@ body, html {
 	color: white;
 	font-family: Arial, sans;
 	font-size: 1.25vh;
-	margin-left: -1.3vh;
+	margin-left: -.75vh;
 	padding-top: .75vh;
 	text-align: center;
 }
@@ -159,7 +159,6 @@ body, html {
 	color: white;
 	font-family: Arial, sans;
 	font-size: 1.25vh;
-	margin-left: 0vh;
 	padding-top: .75vh;
 	text-align: center;
 }
