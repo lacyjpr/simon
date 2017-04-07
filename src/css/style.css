@@ -23,26 +23,43 @@ body, html {
 	height: 96%;
 	float: left;
 	margin: 1%;
+	cursor: pointer;
 }
 
 .top-left {
 	border-top-left-radius: 100%;
-	background-color: #ff0000;
+	background-color: #BF0000; /*red*/
+}
+
+.top-left:active, .top-left.active {
+	background-color: #FF0000
 }
 
 .top-right {
 	border-top-right-radius: 100%;
-	background-color: #0000ff; 
+	background-color: #0000BF; /*blue*/
+}
+
+.top-right:active, .top-right.active {
+	background-color: #2133FF;
 }
 
 .bottom-left {
 	border-bottom-left-radius: 100%;
-	background-color: #008000;
+	background-color: #006600; /*green*/
+}
+
+.bottom-left:active, .bottom-left.active {
+	background-color: #00A000;
 }
 
 .bottom-right {
 	border-bottom-right-radius: 100%;
-	background-color: #ffff00;
+	background-color: #BFBF00; /*yellow*/
+}
+
+.bottom-right:active, .bottom-right.active {
+	background-color: #FFFF00;
 }
 
 .innerCircle {
@@ -62,12 +79,14 @@ body, html {
 	font-size: 6vh;
 	padding: 4vh 0 0 0;
 	margin: 0;
+	user-select: none;
 }
 
 .small {
 	font-size: 1.5vh;
 	position: relative;
 	top: -3vh;
+	user-select: none;
 }
 
 .wrap {
