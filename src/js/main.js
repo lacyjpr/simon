@@ -77,6 +77,41 @@ document.addEventListener("DOMContentLoaded", function() {
 		setTimeout(function(){
 			green.classList.remove("active");
 		}, 2000);
+
+		setTimeout(function(){
+			red.classList.add("active");
+			game.sound.red.play();
+		}, 2000);
+		setTimeout(function(){
+			red.classList.remove("active");
+		}, 2400);
+
+		setTimeout(function(){
+			blue.classList.add("active");
+			game.sound.blue.play();
+		}, 2400);
+		setTimeout(function(){
+			blue.classList.remove("active");
+		}, 2800);
+
+
+		setTimeout(function(){
+			yellow.classList.add("active");
+			game.sound.yellow.play();
+		}, 2800);
+		setTimeout(function(){
+			yellow.classList.remove("active");
+		}, 3200);
+
+
+		setTimeout(function(){
+			green.classList.add("active");
+			game.sound.green.play();
+		}, 3200);
+		setTimeout(function(){
+			green.classList.remove("active");
+		}, 3600);
+
 	}
 
 
