@@ -18,12 +18,12 @@
 		<div class="container">
 
 			<div class="button-row">
-				<div class="button btn top-left" id="red"></div>
-				<div class="button btn top-right" id="blue"></div>
+				<div class="button btn top-left unclickable" id="red"></div>
+				<div class="button btn top-right unclickable" id="blue"></div>
 			</div>
 			<div class="button-row">
-				<div class="button btn bottom-left" id="green"></div>
-				<div class="button btn bottom-right" id="yellow"></div>
+				<div class="button btn bottom-left unclickable" id="green"></div>
+				<div class="button btn bottom-right unclickable" id="yellow"></div>
 			</div>
 
 			<div class="innerCircle">
@@ -32,23 +32,23 @@
 
 				<div class="wrap">
 					<div class="col">
-						<div class="display">--</div>
+						<div id="display">--</div>
 						<div class="label1">Count</div>
 					</div>
 					<div class="col">
-						<div class="button btn-round start"></div>
+						<div class="button btn-round" id="start"></div>
 						<div class="label2">Start</div>         
 					</div>
 					<div class="col">
-						<div class="led"></div>
-						<div class="button btn-round strict"></div>
+						<div id="led"></div>
+						<div class="button btn-round" id="strict"></div>
 						<div class="label3">Strict</div>
 					</div>
 				</div>
 				
 			<div class="wrap">
 			  	<div class="col2">
-					<div class="button btn-round reset"></div>
+					<div class="button btn-round" id="reset"></div>
 					<div class="label4">Reset</div>
 			  	</div>
 			</div>

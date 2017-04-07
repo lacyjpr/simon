@@ -26,6 +26,14 @@ body, html {
 	cursor: pointer;
 }
 
+.unclickable {
+	pointer-events: none;
+}
+
+.clickable {
+	pointer-events: auto;
+}
+
 .top-left {
 	border-top-left-radius: 100%;
 	background-color: #BF0000; /*red*/
@@ -99,7 +107,7 @@ body, html {
 	text-align: center;
 }
 
-.display {
+#display {
 	color: black;
 	margin: 0 0 0 2.5vh;
 	font-size: 4vh;
@@ -124,7 +132,7 @@ body, html {
 	border-radius: 50%;
 }
 
-.start {
+#start {
 	margin-top: 1vh;
 	margin-left: 1.5vh;
 	background-color: #ff0000;
@@ -139,14 +147,14 @@ body, html {
 	text-align: center;
 }
 
-.led {
+#led {
 	margin-left: 3vh;
 	height: .5vh;
 	width: .5vh;
 	background-color: #ff0000;
 }
 
-.strict {
+#strict {
 	margin-top: .5vh;
 	margin-left: 1.5vh;
 	margin-right: 2vh;
@@ -170,7 +178,7 @@ body, html {
 	border: 0;
 }
 
-.reset {
+#reset {
 	background-color: #0000ff;
 }
 
