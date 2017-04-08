@@ -145,7 +145,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Play computer array 
 	function computerPlay() {
+		console.log("computerPlay called");
 		game.count++;
+		console.log("game.count " + game.count);
 		// Make color buttons unclickable credit: http://stackoverflow.com/questions/24266313/using-foreach-on-an-array-from-getelementsbyclassname-results-in-typeerror-und
 		[].forEach.call($btn, function(element){
 			element.classList.add("unclickable");
