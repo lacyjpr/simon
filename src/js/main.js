@@ -134,11 +134,12 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Start game
 	function startGame() {
+		$display.innerHTML = "--"
 		game.running = true;
 		game.count = 0;
 		startDance();
 		getComputerArray();
-		//$start.classList.add("unclickable");
+		$start.classList.add("unclickable");
 		
 	}
 
@@ -190,28 +191,34 @@ document.addEventListener("DOMContentLoaded", function() {
 			// Push player input to playerArray
 			game.playerArray.push(game.move);
 			console.log(game.playerArray);
+			checkPlay();
 		}
-		
-		
+		function checkPlay() {
+			// Check if player input matches computer array credit: http://codepen.io/renestl/pen/ORdNKZ
+			// If no match:
+			if (game.playerArray[game.playerArray.length -1] !== game.computerArray[game.playerArray.length -1]) {
+				// If strict, restart
+				if (game.strict === true) {
+					startGame();
+				} 
+				// If not strict replay computer array
+				else {
+					showComputerArray();
+				}
+			} 
+			// Otherwise, we have a match	
+			else {
+			// Check for win
+				if (game.count === 5) {
+					$display.innerHTML = "Win";
+					$start.classList.remove("unclickable");
+					$start.classList.add("clickable");
+				} else {
+					computerPlay();
+				}
 
-		// Check if player input matches computer array credit: http://codepen.io/renestl/pen/ORdNKZ
-	// if (game.playerArray[game.playerArray.length -1] !== game.computerArray[game.playerArray. length -1]) 
-
-	// if no match:
-
-	// If strict, restart
-
-	// if not strict replay computer array
-
-	// if match
-
-	// Check for win, do win dance, do start dance again
-
-	// Reset button
-
+			}
+		}
 	}
 	
-
-	
-
 });
