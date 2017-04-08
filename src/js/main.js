@@ -148,19 +148,23 @@ document.addEventListener("DOMContentLoaded", function() {
 		console.log("computerPlay called");
 		game.count++;
 		console.log("game.count " + game.count);
-		// Make color buttons unclickable credit: http://stackoverflow.com/questions/24266313/using-foreach-on-an-array-from-getelementsbyclassname-results-in-typeerror-und
-		[].forEach.call($btn, function(element){
-			element.classList.add("unclickable");
-		});
 		$display.innerHTML = game.count;
 		showComputerArray();
-		playerPlay();
 	}
 
-	// Display computer array credit http://codepen.io/renestl/pen/ORdNKZ
+	// Display computer array 
 	function showComputerArray() {
+		$display.innerHTML = game.count;
+		// Empty player array
+		game.playerArray = [];
+		// Show computer array credit http://codepen.io/renestl/pen/ORdNKZ
 		var i = 0;
 		var sequence = setInterval(function(){
+			// Make color buttons unclickable 
+			// $red.classList.add("unclickable");
+			// $blue.classList.add("unclickable");
+			// $green.classList.add("unclickable");
+			// $yellow.classList.add("unclickable");
 			var color = game.computerArray[i];
 			lightSound(color);
 			console.log(color);
@@ -169,58 +173,71 @@ document.addEventListener("DOMContentLoaded", function() {
 				clearInterval(sequence);
 			}
 		}, 700);
+		playerPlay();
 	}
 	
 	function playerPlay() {
-		game.playerArray = [];
+		console.log("playerPlay called");
 		// Make color buttons clickable
-		[].forEach.call($btn, function(element){
-			element.classList.remove("unclickable");
-		});
-		[].forEach.call($btn, function(element){
-			element.classList.add("clickable");
-		});
+		$red.classList.remove("unclickable");
+		$blue.classList.remove("unclickable");
+		$green.classList.remove("unclickable");
+		$yellow.classList.remove("unclickable");
+		game.move = "";
 		// Event listener for color buttons credit: http://stackoverflow.com/questions/19655189/javascript-click-event-listener-on-class
 		for (var i = 0; i < $btn.length; i++){
 			$btn[i].addEventListener("click", getPlay, false);
 		}
-		// Get player move & push to playerArray
-		function getPlay() {
-			console.log("getPlay called");
-			game.move = this.id;
-			console.log("game.move " + game.move);
-			sound(game.move);
-			// Push player input to playerArray
-			game.playerArray.push(game.move);
-			console.log(game.playerArray);
-			checkPlay();
-		}
-		function checkPlay() {
-			// Check if player input matches computer array credit: http://codepen.io/renestl/pen/ORdNKZ
-			// If no match:
-			if (game.playerArray[game.playerArray.length -1] !== game.computerArray[game.playerArray.length -1]) {
-				// If strict, restart
-				if (game.strict === true) {
-					startGame();
-				} 
-				// If not strict replay computer array
-				else {
-					showComputerArray();
-				}
-			} 
-			// Otherwise, we have a match	
-			else {
-			// Check for win
-				if (game.count === 5) {
-					$display.innerHTML = "Win";
-					$start.classList.remove("unclickable");
-					$start.classList.add("clickable");
-				} else {
-					computerPlay();
-				}
+	}
+	// Get player move & push to playerArray
+	function getPlay() {
+		console.log("getPlay called");
+		game.move = this.id;
+		console.log("game.move " + game.move);
+		sound(game.move);
+		// Push player input to playerArray
+		game.playerArray.push(game.move);
+		console.log(game.playerArray);
+		checkPlay();
+	}
 
+	function checkPlay() {
+		// Check if player input matches computer array credit: http://codepen.io/renestl/pen/ORdNKZ
+		// If no match:
+		if (game.playerArray[game.playerArray.length -1] !== game.computerArray[game.playerArray.length -1]) {
+			// If strict, restart
+			if (game.strict === true) {
+				startGame();
+			} 
+			// If not strict replay computer array
+			else {
+				game.sound.red.play();
+				game.sound.blue.play();
+				game.sound.green.play();
+				game.sound.yellow.play();
+				showComputerArray();
 			}
+		} 
+		// Otherwise, we have a match	
+		else {
+		// Check for win
+			if (game.count === 5 && game.playerArray.length === game.count) {
+				$display.innerHTML = "Win";
+				$start.classList.remove("unclickable");
+				$start.classList.add("clickable");
+				// Make color buttons unclickable 
+				$red.classList.add("unclickable");
+				$blue.classList.add("unclickable");
+				$green.classList.add("unclickable");
+				$yellow.classList.add("unclickable");
+			} else if (game.playerArray.length < game.count) {
+				playerPlay();					
+			} else {
+				computerPlay();
+			}
+
 		}
 	}
+	
 	
 });
