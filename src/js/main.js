@@ -9,6 +9,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		colors: ["red", "blue", "green", "yellow"],
 		computerArray: [],
 		playerArray: [],
+		move: "",
 		sound: {
 			red: new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound1.mp3"),
 			blue: new Audio ("https://s3.amazonaws.com/freecodecamp/simonSound2.mp3"),
@@ -41,10 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Lights & sound
 	function lightSound(color) {
-		console.log("lightSound called " + color);
 		switch (color) {
 		case "red":
-			console.log("lightSound red");
 			$red.classList.add("active");
 			game.sound.red.play();
 			setTimeout(function(){
@@ -52,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			}, 400);
 			break;
 		case "blue": 
-			console.log("lightSound blue");
 			$blue.classList.add("active");
 			game.sound.blue.play();
 			setTimeout(function(){
@@ -60,20 +58,38 @@ document.addEventListener("DOMContentLoaded", function() {
 			}, 400);
 			break;
 		case "green":
-			console.log("lightSound green");
 			$green.classList.add("active");
 			game.sound.green.play();
 			setTimeout(function(){
 				$green.classList.remove("active");
 			}, 400);
 			break;
-		case "yellow":
-			console.log("lightSound yellow");		
+		case "yellow":	
 			$yellow.classList.add("active");
 			game.sound.yellow.play();
 			setTimeout(function(){
 				$yellow.classList.remove("active");
 			}, 400);
+			break;
+		default:
+			console.log("error");
+			break;
+		}
+	}
+
+	function sound(color) {
+		switch (color) {
+		case "red":
+			game.sound.red.play();
+			break;
+		case "blue": 
+			game.sound.blue.play();
+			break;
+		case "green":
+			game.sound.green.play();
+			break;
+		case "yellow":	
+			game.sound.yellow.play();
 			break;
 		default:
 			console.log("error");
@@ -111,24 +127,35 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 
-	// Start game
+	// Start listener
 	$start.addEventListener("click", function(){
 		startGame();
 	});
 
+	// Start game
 	function startGame() {
 		game.running = true;
+		game.count = 0;
 		startDance();
 		getComputerArray();
-    //computerPlay();
-		//start.classList.add("unclickable");
+		//$start.classList.add("unclickable");
 		
 	}
 
-	// Play computer array credit http://codepen.io/renestl/pen/ORdNKZ
-
+	// Play computer array 
 	function computerPlay() {
 		game.count++;
+		// Make color buttons unclickable credit: http://stackoverflow.com/questions/24266313/using-foreach-on-an-array-from-getelementsbyclassname-results-in-typeerror-und
+		[].forEach.call($btn, function(element){
+			element.classList.add("unclickable");
+		});
+		$display.innerHTML = game.count;
+		showComputerArray();
+		playerPlay();
+	}
+
+	// Display computer array credit http://codepen.io/renestl/pen/ORdNKZ
+	function showComputerArray() {
 		var i = 0;
 		var sequence = setInterval(function(){
 			var color = game.computerArray[i];
@@ -141,8 +168,33 @@ document.addEventListener("DOMContentLoaded", function() {
 		}, 700);
 	}
 	
-	
-	// Check if player input matches computer array credit: http://codepen.io/renestl/pen/ORdNKZ
+	function playerPlay() {
+		game.playerArray = [];
+		// Make color buttons clickable
+		[].forEach.call($btn, function(element){
+			element.classList.remove("unclickable");
+		});
+		[].forEach.call($btn, function(element){
+			element.classList.add("clickable");
+		});
+		// Event listener for color buttons credit: http://stackoverflow.com/questions/19655189/javascript-click-event-listener-on-class
+		for (var i = 0; i < $btn.length; i++){
+			$btn[i].addEventListener("click", getPlay, false);
+		}
+		// Get player move & push to playerArray
+		function getPlay() {
+			console.log("getPlay called");
+			game.move = this.id;
+			console.log("game.move " + game.move);
+			sound(game.move);
+			// Push player input to playerArray
+			game.playerArray.push(game.move);
+			console.log(game.playerArray);
+		}
+		
+		
+
+		// Check if player input matches computer array credit: http://codepen.io/renestl/pen/ORdNKZ
 	// if (game.playerArray[game.playerArray.length -1] !== game.computerArray[game.playerArray. length -1]) 
 
 	// if no match:
@@ -156,5 +208,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Check for win, do win dance, do start dance again
 
 	// Reset button
+
+	}
+	
+
+	
 
 });
