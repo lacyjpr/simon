@@ -19,16 +19,16 @@ document.addEventListener("DOMContentLoaded", function() {
 	};
 
 	// DOM elements
-	var btn = document.getElementsByClassName("btn");
-	var red = document.getElementById("red");
-	var blue = document.getElementById("blue");
-	var green = document.getElementById("green");
-	var yellow = document.getElementById("yellow");
-	var display = document.getElementById("display");
-	var start = document.getElementById("start");
-	var led = document.getElementById("led");
-	var strict = document.getElementById("strict");
-	var reset = document.getElementById("reset");
+	var $btn = document.getElementsByClassName("btn");
+	var $red = document.getElementById("red");
+	var $blue = document.getElementById("blue");
+	var $green = document.getElementById("green");
+	var $yellow = document.getElementById("yellow");
+	var $display = document.getElementById("display");
+	var $start = document.getElementById("start");
+	var $led = document.getElementById("led");
+	var $strict = document.getElementById("strict");
+	var $reset = document.getElementById("reset");
 
 	// Generate computer array
 	function getComputerArray() {
@@ -43,73 +43,76 @@ document.addEventListener("DOMContentLoaded", function() {
 	function lightSound(color) {
 		console.log("lightSound called " + color);
 		switch (color) {
-		case red:
+		case "red":
 			console.log("lightSound red");
-			red.classList.add("active");
+			$red.classList.add("active");
 			game.sound.red.play();
 			setTimeout(function(){
-				red.classList.remove("active");
+				$red.classList.remove("active");
 			}, 400);
 			break;
-		case blue: 
+		case "blue": 
 			console.log("lightSound blue");
-			blue.classList.add("active");
+			$blue.classList.add("active");
 			game.sound.blue.play();
 			setTimeout(function(){
-				blue.classList.remove("active");
+				$blue.classList.remove("active");
 			}, 400);
 			break;
-		case green:
+		case "green":
 			console.log("lightSound green");
-			green.classList.add("active");
+			$green.classList.add("active");
 			game.sound.green.play();
 			setTimeout(function(){
-				green.classList.remove("active");
+				$green.classList.remove("active");
 			}, 400);
 			break;
-		case yellow:
+		case "yellow":
 			console.log("lightSound yellow");		
-			yellow.classList.add("active");
+			$yellow.classList.add("active");
 			game.sound.yellow.play();
 			setTimeout(function(){
-				yellow.classList.remove("active");
+				$yellow.classList.remove("active");
 			}, 400);
+			break;
+		default:
+			console.log("error");
 			break;
 		}
 	}
 
 	// Do start dance
 	function startDance() { 
-		lightSound(red);
+		lightSound("red");
 		setTimeout(function() {
-			lightSound(blue);
+			lightSound("blue");
 		}, 400);
 		setTimeout(function() {
-			lightSound(yellow);
+			lightSound("yellow");
 		}, 800);
 		setTimeout(function() {
-			lightSound(green);
+			lightSound("green");
 		}, 1200);
 		setTimeout(function() {
-			lightSound(red);
+			lightSound("red");
 		}, 1600);
 		setTimeout(function() {
-			lightSound(blue);
+			lightSound("blue");
 		}, 2000);
 		setTimeout(function() {
-			lightSound(yellow);
+			lightSound("yellow");
 		}, 2400);
 		setTimeout(function() {
-			lightSound(green);
+			lightSound("green");
 		}, 2800);
 		setTimeout(function() {
 			computerPlay();
-		},3200);
+		},3800);
 	}
 
 
 	// Start game
-	start.addEventListener("click", function(){
+	$start.addEventListener("click", function(){
 		startGame();
 	});
 
@@ -117,11 +120,13 @@ document.addEventListener("DOMContentLoaded", function() {
 		game.running = true;
 		startDance();
 		getComputerArray();
+    //computerPlay();
 		//start.classList.add("unclickable");
 		
 	}
 
-	// Play computer array to count -1
+	// Play computer array credit http://codepen.io/renestl/pen/ORdNKZ
+
 	function computerPlay() {
 		game.count++;
 		var i = 0;
@@ -137,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	
 	
-	// Check if player input matches computer array
+	// Check if player input matches computer array credit: http://codepen.io/renestl/pen/ORdNKZ
 	// if (game.playerArray[game.playerArray.length -1] !== game.computerArray[game.playerArray. length -1]) 
 
 	// if no match:
