@@ -37,7 +37,6 @@ document.addEventListener("DOMContentLoaded", function() {
 		for (var i = 0; i < 20; i++){
 			game.computerArray.push(game.colors[(Math.floor(Math.random() * 4))]);
 		}
-		console.log(game.computerArray);
 	}
 
 	// Lights & sound
@@ -70,9 +69,6 @@ document.addEventListener("DOMContentLoaded", function() {
 			setTimeout(function(){
 				$yellow.classList.remove("active");
 			}, 400);
-			break;
-		default:
-			console.log("error");
 			break;
 		}
 	}
@@ -126,6 +122,31 @@ document.addEventListener("DOMContentLoaded", function() {
 		},3800);
 	}
 
+	// Do win dance
+	function winDance() {
+		lightSound("green");
+		setTimeout(function() {
+			lightSound("yellow");
+		}, 400);
+		setTimeout(function() {
+			lightSound("blue");
+		}, 800);
+		setTimeout(function() {
+			lightSound("red");
+		}, 1200);
+		setTimeout(function() {
+			lightSound("green");
+		}, 1600);
+		setTimeout(function() {
+			lightSound("yellow");
+		}, 2000);
+		setTimeout(function() {
+			lightSound("blue");
+		}, 2400);
+		setTimeout(function() {
+			lightSound("red");
+		}, 2800);
+	}
 
 	// Start listener
 	$start.addEventListener("click", function(){
@@ -145,9 +166,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Play computer array 
 	function computerPlay() {
-		console.log("computerPlay called");
 		game.count++;
-		console.log("game.count " + game.count);
 		$display.innerHTML = game.count;
 		showComputerArray();
 	}
@@ -163,27 +182,20 @@ document.addEventListener("DOMContentLoaded", function() {
 		var sequence = setInterval(function(){
 			// Make color buttons unclickable 
 			$red.classList.add("unclickable");
-			console.log($red.classList.contains("unclickable"));
 			$blue.classList.add("unclickable");
-			console.log($blue.classList.contains("unclickable"));
 			$green.classList.add("unclickable");
-			console.log($green.classList.contains("unclickable"));
 			$yellow.classList.add("unclickable");
-			console.log($yellow.classList.contains("unclickable"));
 			var color = game.computerArray[i];
 			lightSound(color);
-			console.log(color);
 			i++;
 			if (i >= game.count){
 				clearInterval(sequence);
 				playerPlay();
 			}
 		}, 700);
-		
 	}
 	
 	function playerPlay() {
-		console.log("playerPlay called");
 		// Make color buttons clickable
 		$red.classList.remove("unclickable");
 		$blue.classList.remove("unclickable");
@@ -197,13 +209,10 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 	// Get player move & push to playerArray
 	function getPlay() {
-		console.log("getPlay called");
 		game.move = this.id;
-		console.log("game.move " + game.move);
 		sound(game.move);
 		// Push player input to playerArray
 		game.playerArray.push(game.move);
-		console.log(game.playerArray);
 		checkPlay();
 	}
 
@@ -217,18 +226,26 @@ document.addEventListener("DOMContentLoaded", function() {
 			} 
 			// If not strict replay computer array
 			else {
-				console.log("wrong!");
+				$display.innerHTML = "!!!"
+				setTimeout(function() {
+					$display.innerHTML = game.count;
+				},2500);
 				game.sound.red.play();
 				game.sound.blue.play();
 				game.sound.green.play();
 				game.sound.yellow.play();
-				showComputerArray();
+				setTimeout(function() {
+					showComputerArray();
+				},3000);
 			}
 		} 
 		// Otherwise, we have a match	
 		else {
 		// Check for win
 			if (game.count === 5 && game.playerArray.length === game.count) {
+				setTimeout(function() {
+					winDance();
+				},700);
 				$display.innerHTML = "Win";
 				$start.classList.remove("unclickable");
 				$start.classList.add("clickable");
@@ -242,9 +259,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			} else {
 				computerPlay();
 			}
-
 		}
 	}
-	
-	
+		
 });
