@@ -154,6 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Display computer array 
 	function showComputerArray() {
+		// Show game count
 		$display.innerHTML = game.count;
 		// Empty player array
 		game.playerArray = [];
@@ -161,19 +162,24 @@ document.addEventListener("DOMContentLoaded", function() {
 		var i = 0;
 		var sequence = setInterval(function(){
 			// Make color buttons unclickable 
-			// $red.classList.add("unclickable");
-			// $blue.classList.add("unclickable");
-			// $green.classList.add("unclickable");
-			// $yellow.classList.add("unclickable");
+			$red.classList.add("unclickable");
+			console.log($red.classList.contains("unclickable"));
+			$blue.classList.add("unclickable");
+			console.log($blue.classList.contains("unclickable"));
+			$green.classList.add("unclickable");
+			console.log($green.classList.contains("unclickable"));
+			$yellow.classList.add("unclickable");
+			console.log($yellow.classList.contains("unclickable"));
 			var color = game.computerArray[i];
 			lightSound(color);
 			console.log(color);
 			i++;
 			if (i >= game.count){
 				clearInterval(sequence);
+				playerPlay();
 			}
 		}, 700);
-		playerPlay();
+		
 	}
 	
 	function playerPlay() {
@@ -211,6 +217,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			} 
 			// If not strict replay computer array
 			else {
+				console.log("wrong!");
 				game.sound.red.play();
 				game.sound.blue.play();
 				game.sound.green.play();
