@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 	// Start game
 	function startGame() {
-		$display.innerHTML = "--"
+		$display.innerHTML = "--";
 		game.running = true;
 		game.count = 0;
 		startDance();
@@ -226,7 +226,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			} 
 			// If not strict replay computer array
 			else {
-				$display.innerHTML = "!!!"
+				$display.innerHTML = "!!!";
 				setTimeout(function() {
 					$display.innerHTML = game.count;
 				},2500);
