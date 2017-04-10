@@ -252,7 +252,7 @@ document.addEventListener("DOMContentLoaded", function() {
 		// Otherwise, we have a match	
 		else {
 		// Check for win
-			if (game.count === 5 && game.playerArray.length === game.count) {
+			if (game.count === 20 && game.playerArray.length === game.count) {
 				setTimeout(function() {
 					winDance();
 				},700);
