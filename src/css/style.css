@@ -80,6 +80,7 @@ body, html {
 	background-color: black;
 	z-index: 10;
 	overflow: auto;
+	text-align: center;
 }
 
 .brand {
@@ -87,7 +88,9 @@ body, html {
 	font-size: 6vh;
 	padding: 0;
 	margin-top: 4vh;
+	margin-left: 6vh;
 	user-select: none;
+	width: 10vh;
 }
 
 .small {
@@ -101,6 +104,17 @@ body, html {
 	display: flex;
 	justify-content: center;
 	margin-top: 1.5vh;
+	width: 10vh;
+	margin-left: 9.5vh;
+}
+
+
+.wrap2 {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.5vh;
+	width: 10vh;
+	margin-left: 10.25vh;
 }
 
 .col {
@@ -205,11 +219,24 @@ body, html {
 		left: 12.5vh;
 	}
 
+	.brand {
+		margin-left: 4vh;
+	}
+
 	.wrap {
 		display: flex;
 		justify-content: center;
 		margin-top: 0;
+		margin-left: 7.5vh;
 	}
+
+	.wrap2 {
+	display: flex;
+	justify-content: center;
+	margin-top: 0;
+	width: 10vh;
+	margin-left: 8vh;
+}
 
 }
 
