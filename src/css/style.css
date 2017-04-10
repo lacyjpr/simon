@@ -85,8 +85,8 @@ body, html {
 .brand {
 	text-align: center;
 	font-size: 6vh;
-	padding: 4vh 0 0 0;
-	margin: 0;
+	padding: 0;
+	margin-top: 4vh;
 	user-select: none;
 }
 
