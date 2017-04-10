@@ -280,6 +280,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Toggle strict on/off
 	function strictMode() {
 		game.strict = !game.strict;
+		console.log("Strict mode = " + game.strict);
 		$led.classList.toggle("on");
 	}
 	
