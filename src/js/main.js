@@ -96,6 +96,7 @@ document.addEventListener("DOMContentLoaded", function() {
 	// Do start dance
 	function startDance() { 
 		lightSound("red");
+		$reset.classList.add("unclickable");
 		setTimeout(function() {
 			lightSound("blue");
 		}, 400);
@@ -118,6 +119,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			lightSound("green");
 		}, 2800);
 		setTimeout(function() {
+			$reset.classList.remove("unclickable");
 			computerPlay();
 		},3800);
 	}
@@ -271,16 +273,19 @@ document.addEventListener("DOMContentLoaded", function() {
 	}
 
 	// Strict event listener
-	$strict.addEventListener("click", function(){
+	$strict.addEventListener("click", function() {
 		strictMode();
 	});
 
 	// Toggle strict on/off
 	function strictMode() {
 		game.strict = !game.strict;
-		console.log("strict = " + game.strict);
 		$led.classList.toggle("on");
 	}
 	
+	// Reset event listener
+	$reset.addEventListener("click", function() {
+		startGame();
+	});
 		
 });
