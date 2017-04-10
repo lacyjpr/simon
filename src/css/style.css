@@ -104,8 +104,8 @@ body, html {
 	display: flex;
 	justify-content: center;
 	margin-top: 1.5vh;
-	width: 10vh;
 	margin-left: 9.5vh;
+	width: 10vh;
 }
 
 
@@ -113,8 +113,8 @@ body, html {
 	display: flex;
 	justify-content: center;
 	margin-top: 1.5vh;
-	width: 10vh;
 	margin-left: 10.25vh;
+	width: 10vh;
 }
 
 .col {
@@ -234,8 +234,8 @@ body, html {
 	display: flex;
 	justify-content: center;
 	margin-top: 0;
-	width: 10vh;
 	margin-left: 8vh;
+	width: 10vh;
 }
 
 }
