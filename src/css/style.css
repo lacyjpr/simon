@@ -154,6 +154,10 @@ body, html {
 	background-color: #ff0000;
 }
 
+#led.on {
+	background-color: #006600;
+}
+
 #strict {
 	margin-top: .5vh;
 	margin-left: 1.5vh;

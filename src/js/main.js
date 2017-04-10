@@ -222,21 +222,29 @@ document.addEventListener("DOMContentLoaded", function() {
 		if (game.playerArray[game.playerArray.length -1] !== game.computerArray[game.playerArray.length -1]) {
 			// If strict, restart
 			if (game.strict === true) {
-				startGame();
+				$display.innerHTML = "!!!";
+				game.sound.red.play();
+				game.sound.blue.play();
+				game.sound.green.play();
+				game.sound.yellow.play();
+				setTimeout(function() {
+					startGame();
+				}, 2000);
+				
 			} 
 			// If not strict replay computer array
 			else {
 				$display.innerHTML = "!!!";
 				setTimeout(function() {
 					$display.innerHTML = game.count;
-				},2500);
+				}, 2000);
 				game.sound.red.play();
 				game.sound.blue.play();
 				game.sound.green.play();
 				game.sound.yellow.play();
 				setTimeout(function() {
 					showComputerArray();
-				},3000);
+				}, 2500);
 			}
 		} 
 		// Otherwise, we have a match	
@@ -261,5 +269,18 @@ document.addEventListener("DOMContentLoaded", function() {
 			}
 		}
 	}
+
+	// Strict event listener
+	$strict.addEventListener("click", function(){
+		strictMode();
+	});
+
+	// Toggle strict on/off
+	function strictMode() {
+		game.strict = !game.strict;
+		console.log("strict = " + game.strict);
+		$led.classList.toggle("on");
+	}
+	
 		
 });
