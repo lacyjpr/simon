@@ -89,7 +89,10 @@ body, html {
 	padding: 0;
 	margin-top: 4vh;
 	margin-left: 6vh;
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 	width: 10vh;
 }
 
@@ -97,12 +100,19 @@ body, html {
 	font-size: 1.5vh;
 	position: relative;
 	top: -3vh;
-	user-select: none;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
 }
 
 .wrap {
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin-top: 1.5vh;
 	margin-left: 9.5vh;
 	width: 10vh;
@@ -110,8 +120,12 @@ body, html {
 
 
 .wrap2 {
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin-top: 1.5vh;
 	margin-left: 10.25vh;
 	width: 10vh;
@@ -189,8 +203,12 @@ body, html {
 }
 
 .col2 {
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	flex-direction: column;
+	-webkit-flex-direction: column;
+	    -ms-flex-direction: column;
+	        flex-direction: column;
 	text-align: center;
 	padding: 0;
 	border: 0;
@@ -224,21 +242,28 @@ body, html {
 	}
 
 	.wrap {
+		display: -webkit-flex;
+		display: -ms-flexbox;
 		display: flex;
-		justify-content: center;
+		-webkit-justify-content: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
 		margin-top: 0;
 		margin-left: 7.5vh;
 	}
 
 	.wrap2 {
+	display: -webkit-flex;
+	display: -ms-flexbox;
 	display: flex;
-	justify-content: center;
+	-webkit-justify-content: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 	margin-top: 0;
 	margin-left: 8vh;
 	width: 10vh;
-}
+	}
 
 }
-
 
 
