@@ -26,6 +26,13 @@ body, html {
 	cursor: pointer;
 	/* disable touch highlight: https://developers.google.com/web/fundamentals/design-and-ui/input/touch/ */ 
 	-webkit-tap-highlight-color: transparent;
+	/* Firefox Specific CSS to remove button differences and focus ring */
+	background-image: none;
+}
+
+/* Firefox Specific CSS to remove button differences and focus ring */
+.btn::-moz-focus-inner {
+	border: 0;
 }
 
 .unclickable {
