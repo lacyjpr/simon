@@ -90,9 +90,9 @@ body, html {
 	margin-top: 4vh;
 	margin-left: 6vh;
 	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 	width: 10vh;
 }
 
@@ -101,9 +101,9 @@ body, html {
 	position: relative;
 	top: -3vh;
 	-webkit-user-select: none;
-	   -moz-user-select: none;
-	    -ms-user-select: none;
-	        user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
 }
 
 .wrap {
@@ -111,8 +111,8 @@ body, html {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	margin-top: 1.5vh;
 	margin-left: 9.5vh;
 	width: 10vh;
@@ -124,8 +124,8 @@ body, html {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	margin-top: 1.5vh;
 	margin-left: 10.25vh;
 	width: 10vh;
@@ -207,8 +207,8 @@ body, html {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-flex-direction: column;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	text-align: center;
 	padding: 0;
 	border: 0;
@@ -246,8 +246,8 @@ body, html {
 		display: -ms-flexbox;
 		display: flex;
 		-webkit-justify-content: center;
-		    -ms-flex-pack: center;
-		        justify-content: center;
+		-ms-flex-pack: center;
+		justify-content: center;
 		margin-top: 0;
 		margin-left: 7.5vh;
 	}
@@ -257,8 +257,8 @@ body, html {
 	display: -ms-flexbox;
 	display: flex;
 	-webkit-justify-content: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
+	-ms-flex-pack: center;
+	justify-content: center;
 	margin-top: 0;
 	margin-left: 8vh;
 	width: 10vh;
